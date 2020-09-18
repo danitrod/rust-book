@@ -13,23 +13,18 @@
 // 12 drummers drumming
 
 const LYRIC_OBJECTS: [&str; 12] = [
-    "partridge in a pear tree.",
-    "turtle doves,",
-    "French hens,",
-    "calling birds,",
-    "gold rings,",
-    "geese a-laying,",
-    "swans a-swimming,",
-    "maids a-milking,",
-    "ladies dancing,",
-    "lords a-leaping,",
-    "pipers piping,",
-    "drummers drumming,",
-];
-
-const NUMBERS: [&str; 12] = [
-    "And a", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Eleven",
-    "Twelve",
+    "And a partridge in a pear tree.",
+    "Two turtle doves,",
+    "Three French hens,",
+    "Four calling birds,",
+    "Five gold rings,",
+    "Six geese a-laying,",
+    "Seven swans a-swimming,",
+    "Eight maids a-milking,",
+    "Nine ladies dancing,",
+    "Ten lords a-leaping,",
+    "Eleven pipers piping,",
+    "Twelve drummers drumming,",
 ];
 
 const POSITIONS: [&str; 12] = [
@@ -39,8 +34,8 @@ const POSITIONS: [&str; 12] = [
 
 fn main() {
     println!(
-        "On the {} day of Christmas my true love sent to me\nA {}\n",
-        POSITIONS[0], LYRIC_OBJECTS[0]
+        "On the {} day of Christmas my true love sent to me\nA partridge in a pear tree.\n",
+        POSITIONS[0]
     );
     for i in 1..12 {
         println!(
@@ -48,7 +43,7 @@ fn main() {
             POSITIONS[i]
         );
         for j in (0..i + 1).rev() {
-            println!("{} {}", NUMBERS[j], LYRIC_OBJECTS[j]);
+            println!("{}", LYRIC_OBJECTS[j]);
         }
         println!();
     }
