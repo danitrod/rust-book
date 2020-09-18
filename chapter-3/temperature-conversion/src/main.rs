@@ -6,7 +6,7 @@ fn main() {
 
     let mut choice: f64;
     loop {
-        choice = int_input();
+        choice = number_input();
 
         if choice == 1. || choice == 2. {
             break;
@@ -27,7 +27,7 @@ fn main() {
 
     // Temperature input
     eprint!("Type in your temperature in {} >>", input_unit);
-    let temp_input = int_input();
+    let temp_input = number_input();
 
     let temp_result: f64;
     if choice == 1. {
@@ -39,7 +39,7 @@ fn main() {
     println!("Conversion to {}: {:.2}", output_unit, temp_result);
 }
 
-fn int_input() -> f64 {
+fn number_input() -> f64 {
     loop {
         let mut inp = String::new();
         io::stdin()
