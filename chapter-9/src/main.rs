@@ -81,3 +81,31 @@ fn _read_username_from_file4() -> Result<String, io::Error> {
 
 //     Ok(())
 // }
+
+// Back to guessing game: Creating a type to validate input range
+pub struct Guess {
+    value: i32,
+}
+
+impl Guess {
+    pub fn new(value: i32) -> Guess {
+        if value < 1 || value > 100 {
+            panic!("Guess value must be between 1 and 100, got {}.", value);
+        }
+
+        Guess { value }
+    }
+
+    pub fn value(&self) -> i32 {
+        self.value
+    }
+}
+
+fn _test() {
+    let _guess = Guess::new(-4); // will panic
+    let guess = Guess::new(4); // ok
+
+    // guess.value is private: you need to set it as private so it can't be directly set.
+    // this assures it is created with Guess::new()
+    println!("value: {}", guess.value());
+}
