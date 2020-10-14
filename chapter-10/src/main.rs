@@ -82,16 +82,16 @@ fn _monomorphization() {
     let _float = Some(5.0);
     // This compiles into this, reimplementing option for each type used:
 
-    enum Option_i32 {
+    enum OptionI32 {
         Some(i32),
         None,
     }
 
-    enum Option_f64 {
+    enum OptionF64 {
         Some(f64),
         None,
     }
 
-    let _integer = Option_i32::Some(5);
-    let _float = Option_f64::Some(5.0);
+    let _integer = OptionI32::Some(5);
+    let _float = OptionF64::Some(5.0);
 }
