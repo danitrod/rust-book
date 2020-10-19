@@ -1,3 +1,16 @@
+// Options can be passed to the compiler with cargo test --<options>
+// or to the binaries with cargo test -- --<options>
+
+// Tests run in parallel by defualt. They can be run synchronously by passing
+// --test-threads=1 to the binaries
+// e.g.
+// $ cargo test -- --test-threads=1
+
+// Specific tests can be run by passing a substring included in the function names to the compiler.
+// e.g.
+// $ cargo test it_works
+// will run it_works and it_works_with_result
+
 #[derive(Debug)]
 pub struct Rectangle {
     width: u32,
@@ -99,4 +112,30 @@ mod tests {
             Err(String::from("two plus two does not equal four"))
         }
     }
+
+    // Console output will only show if the test fails
+    // Passing logs can be shown with the option --show-output on binaries
+    #[test]
+    fn fails_with_logs() {
+        println!("Will make a valid assertion");
+        assert_eq!(2, 2);
+        println!("Ok. Will make an invalid assertion");
+        assert_eq!(1, 2);
+        println!("Test will have failed at this point.");
+    }
+
+    #[test]
+    fn passes_with_logs() {
+        println!("This log will not show, as the test passes.");
+        assert_eq!(1, 1);
+    }
+
+    // Ignoring a specific test: simpy add #[ignore]
+    #[test]
+    #[ignore]
+    fn ignored_test() {
+        assert_eq!(1, 2);
+    }
+
+    // Ignored tests can be run exclusively with `cargo test -- --ignored`
 }
