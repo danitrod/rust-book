@@ -11,6 +11,8 @@
 // $ cargo test it_works
 // will run it_works and it_works_with_result
 
+// Private functions can also be tested.
+
 #[derive(Debug)]
 pub struct Rectangle {
     width: u32,
@@ -115,14 +117,14 @@ mod tests {
 
     // Console output will only show if the test fails
     // Passing logs can be shown with the option --show-output on binaries
-    #[test]
-    fn fails_with_logs() {
-        println!("Will make a valid assertion");
-        assert_eq!(2, 2);
-        println!("Ok. Will make an invalid assertion");
-        assert_eq!(1, 2);
-        println!("Test will have failed at this point.");
-    }
+    // #[test]
+    // fn fails_with_logs() {
+    //     println!("Will make a valid assertion");
+    //     assert_eq!(2, 2);
+    //     println!("Ok. Will make an invalid assertion");
+    //     assert_eq!(1, 2);
+    //     println!("Test will have failed at this point.");
+    // }
 
     #[test]
     fn passes_with_logs() {
