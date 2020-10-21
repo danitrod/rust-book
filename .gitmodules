@@ -1,0 +1,3 @@
+[submodule "chapter-12-project/minigrep"]
+	path = chapter-12-project/minigrep
+	url = https://github.com/danitrod/minigrep
