@@ -2,6 +2,9 @@ use std::collections::HashMap;
 use std::hash::Hash;
 use std::thread;
 use std::time::Duration;
+mod iterators;
+use iterators::iterators;
+mod counter;
 
 struct Cacher<T, U: Eq + Hash + Copy, V: Copy>
 where
@@ -81,4 +84,10 @@ fn main() {
     let y = vec![1, 2, 3];
 
     assert!(equal_to_x(y));
+
+    println!("\nIterators");
+    iterators();
+
+    println!("\nCounter");
+    counter::main();
 }
