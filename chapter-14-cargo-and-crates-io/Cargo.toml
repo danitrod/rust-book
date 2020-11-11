@@ -1,0 +1,9 @@
+[package]
+name = "test-crate-chapter-14"
+version = "0.1.0"
+authors = ["danitrod <danitrod@outlook.com>"]
+edition = "2018"
+description = "Testing publishing a crate"
+license = "MIT"
+
+[dependencies]
