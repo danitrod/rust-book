@@ -1,3 +1,4 @@
+#![allow(unused)]
 // RC: Reference counting
 
 // Fails: Try referencing cons lists with boxes more than once
